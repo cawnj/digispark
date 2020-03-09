@@ -15,7 +15,7 @@ void loop() {
   // the command itself
   DigiKeyboard.print("Invoke-WebRequest -Uri \"https://raw.githubusercontent.com/cawnj/digispark-scripts/master/entire_bee_movie_script.txt\" -OutFile \"text.txt\"; $Contents = Get-Content \"text.txt\"; Add-Type -AssemblyName System.speech; $Narrator = New-Object System.Speech.Synthesis.SpeechSynthesizer; $Narrator.SelectVoice('Microsoft Zira Desktop'); $Narrator.Rate = 2; $Narrator.Speak($Contents)");
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
-  // Minimize powershell window
+  // minimize powershell window
   DigiKeyboard.sendKeyStroke(KEY_SPACE, MOD_ALT_LEFT);
   DigiKeyboard.sendKeyStroke(KEY_N);
   
