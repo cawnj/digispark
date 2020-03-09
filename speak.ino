@@ -1,4 +1,4 @@
-// Speaks whatever is in my github
+// TTS specified text file
 #include "DigiKeyboard.h"
 void setup() {
 }
@@ -10,59 +10,14 @@ void loop() {
   DigiKeyboard.delay(100);
   DigiKeyboard.print("powershell");
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
-  DigiKeyboard.delay(3000);
+  DigiKeyboard.delay(1000);
 
-
-  DigiKeyboard.print("$url = \"PLACE URL HERE\"");
-  DigiKeyboard.sendKeyStroke(KEY_ENTER);
-  DigiKeyboard.delay(100);
-
-  DigiKeyboard.print("$output = \"text.txt\"");
-  DigiKeyboard.sendKeyStroke(KEY_ENTER);
-  DigiKeyboard.delay(100);
-
-  DigiKeyboard.print("$start_time = Get-Date");
-  DigiKeyboard.sendKeyStroke(KEY_ENTER);
-  DigiKeyboard.delay(100);
-
-  DigiKeyboard.print("Invoke-WebRequest -Uri $url -OutFile $output");
-  DigiKeyboard.sendKeyStroke(KEY_ENTER);
-  DigiKeyboard.delay(100);
-
-  DigiKeyboard.print("Add-Type -AssemblyName System.speech");
-  DigiKeyboard.sendKeyStroke(KEY_ENTER);
-  DigiKeyboard.delay(100);
-
-  DigiKeyboard.print("$Narrator = New-Object System.Speech.Synthesis.SpeechSynthesizer");
-  DigiKeyboard.sendKeyStroke(KEY_ENTER);
-  DigiKeyboard.delay(100);
-
-  DigiKeyboard.print("$Narrator.SelectVoice('Microsoft Zira Desktop')");
-  DigiKeyboard.sendKeyStroke(KEY_ENTER);
-  DigiKeyboard.delay(100);
-
-  DigiKeyboard.print("$Narrator.Rate = 2");
-  DigiKeyboard.sendKeyStroke(KEY_ENTER);
-  DigiKeyboard.delay(100);
-
-  DigiKeyboard.print("$Location = \"text.txt\"");
-  DigiKeyboard.sendKeyStroke(KEY_ENTER);
-  DigiKeyboard.delay(100);
-
-  DigiKeyboard.print("$Contents = Get-Content $Location");
-  DigiKeyboard.sendKeyStroke(KEY_ENTER);
-  DigiKeyboard.delay(100);
-
-  DigiKeyboard.print("$Narrator.Speak($Contents)");
-  DigiKeyboard.sendKeyStroke(KEY_ENTER);
-  DigiKeyboard.delay(100);
-
-
-  DigiKeyboard.print("exit");
+  DigiKeyboard.print("Invoke-WebRequest -Uri \"https://raw.githubusercontent.com/cawnj/digispark-scripts/master/entire_bee_movie_script.txt\" -OutFile \"text.txt\"; $Contents = Get-Content \"text.txt\"; Add-Type -AssemblyName System.speech; $Narrator = New-Object System.Speech.Synthesis.SpeechSynthesizer; $Narrator.SelectVoice('Microsoft Zira Desktop'); $Narrator.Rate = 2; $Narrator.Speak($Contents)");
   DigiKeyboard.sendKeyStroke(KEY_ENTER);
   DigiKeyboard.delay(100);
   DigiKeyboard.sendKeyStroke(KEY_SPACE, MOD_ALT_LEFT);
   DigiKeyboard.sendKeyStroke(KEY_N);
+  
   for (;;) {
     /*empty*/
   }
